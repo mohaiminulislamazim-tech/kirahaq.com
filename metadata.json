@@ -1,0 +1,6 @@
+{
+  "name": "Kira Haq - Natural Foods & Sunnah Wellness",
+  "description": "Premium e-commerce platform for pure honey, natural foods, Sunnah wellness products, and Islamic health consultation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

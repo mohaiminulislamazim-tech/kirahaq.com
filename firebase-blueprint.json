@@ -1,0 +1,52 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "Registered user accounts and profiles",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "district": { "type": "string" },
+        "avatar": { "type": "string" },
+        "role": { "type": "string" },
+        "isVerified": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "email"]
+    },
+    "orders": {
+      "title": "Customer Orders",
+      "description": "Placed store orders",
+      "type": "object",
+      "properties": {
+        "orderId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "district": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "totalUsd": { "type": "number" },
+        "totalBdt": { "type": "number" },
+        "currency": { "type": "string" },
+        "status": { "type": "string" },
+        "orderDate": { "type": "string" }
+      },
+      "required": ["orderId", "customerName", "email"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profile documents accessible by owner and admins"
+    },
+    "/orders/{orderId}": {
+      "schema": "orders",
+      "description": "Customer order records"
+    }
+  }
+}

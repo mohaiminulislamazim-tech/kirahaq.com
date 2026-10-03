@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img, video, iframe, svg {
+  max-width: 100%;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
