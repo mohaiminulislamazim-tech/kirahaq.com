@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kira Haq | Organic Skin Care</title>
+    <script>
+      (function() {
+        var isIgnorable = function(text) {
+          var str = String(text || '').toLowerCase();
+          return (
+            str.indexOf('metamask') !== -1 ||
+            str.indexOf('ethereum') !== -1 ||
+            str.indexOf('web3') !== -1 ||
+            str.indexOf('phantom') !== -1 ||
+            str.indexOf('solana') !== -1 ||
+            str.indexOf('chrome-extension://') !== -1 ||
+            str.indexOf('moz-extension://') !== -1 ||
+            str.indexOf('websocket') !== -1 ||
+            str.indexOf('vite') !== -1
+          );
+        };
+
+        window.addEventListener('unhandledrejection', function(event) {
+          var msg = (event && event.reason && (event.reason.message || String(event.reason))) || '';
+          if (isIgnorable(msg)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        }, true);
+
+        window.addEventListener('error', function(event) {
+          var msg = (event && (event.message || (event.error && event.error.message))) || '';
+          if (isIgnorable(msg)) {
+            event.preventDefault();
+            if (typeof event.stopImmediatePropagation === 'function') {
+              event.stopImmediatePropagation();
+            }
+          }
+        }, true);
+
+        var origConsoleError = console.error;
+        console.error = function() {
+          var args = Array.prototype.slice.call(arguments);
+          var joined = args.map(function(a) { return String(a && (a.message || a)); }).join(' ');
+          if (isIgnorable(joined)) {
+            return;
+          }
+          origConsoleError.apply(console, arguments);
+        };
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-BpIURV08.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BAderhyQ.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+

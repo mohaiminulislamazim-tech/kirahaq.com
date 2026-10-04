@@ -1,8 +1,17 @@
+# Dependencies - never commit
 node_modules/
+
+# Build output
+# NOTE: dist/ IS committed on purpose. It contains the production bundle
+# (dist/server.cjs + hashed assets) that gets uploaded to Namecheap/cPanel.
+# Re-generate it with `npm run build` whenever server.ts or src/ change.
+# build/ and coverage/ remain ignored.
 build/
-dist/
 coverage/
+
 .DS_Store
 *.log
+
+# Secrets - never commit (keep .env.example)
 .env*
 !.env.example
